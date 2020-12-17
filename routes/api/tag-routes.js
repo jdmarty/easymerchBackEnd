@@ -63,7 +63,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     //delete a tag at the provided id
     const deletedTag = await Tag.destroy({
@@ -72,11 +72,11 @@ router.delete('/:id', (req, res) => {
       },
     });
     //if no matching model was found, send message
-    if (!deletedCategory) {
+    if (!deletedTag) {
       res.status(404).json({ message: "No category found with this id!" });
       return
     }
-    res.status(200).json(deletedCategory);
+    res.status(200).json(deletedTag);
   } catch (err) {
     res.status(500).json(err);
   }
