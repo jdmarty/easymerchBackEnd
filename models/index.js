@@ -16,11 +16,13 @@ Category.hasMany(Product, {
 
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
+  //pass through the ProductTag table to find rows where reference columns match
   through: {
     model: ProductTag,
     unique: false,
   },
-  as: "tagged_product"
+  // shared key is named tags
+  as: "tags"
 })
 
 // Tags belongToMany Products (through ProductTag)
@@ -29,8 +31,8 @@ Tag.belongsToMany(Product, {
     model: ProductTag,
     unique: false,
   },
-  as: "tag_for_product"
-})
+  as: "products",
+});
 
 
 module.exports = {

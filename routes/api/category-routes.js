@@ -25,6 +25,7 @@ router.get('/:id', async (req, res) => {
     //if no data is returned, send a 404 error
     if (!categoryData) {
       res.status(404).json({ message: "No category found with this id!" });
+      return
     }
     res.status(200).json(categoryData);
   } catch (err) {
@@ -54,10 +55,12 @@ router.put('/:id', async (req, res) => {
         where: { id: req.params.id }
       },
     )
+    //if no matching model was found, send message
     if (!updatedCategory[0]) {
       res.status(404).json({ message: "No category found with this id!" });
+      return
     }
-    res.status(200).json({ message: 'Category name updated!' });
+    res.status(200).json(updatedCategory);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -69,9 +72,14 @@ router.delete('/:id', async (req, res) => {
     const deletedCategory = await Category.destroy({
       where: {
         id: req.params.id,
-      }
-    })
-    res.status(200).json({ message: "Category deleted!" });
+      },
+    });
+    //if no matching model was found, send message
+    if (!deletedCategory) {
+      res.status(404).json({ message: "No category found with this id!" });
+      return
+    }
+    res.status(200).json(deletedCategory);
   } catch (err) {
     res.status(500).json(err);
   }
