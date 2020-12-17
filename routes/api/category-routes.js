@@ -47,14 +47,9 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     //update category with new data from provided body at the provided id
-    const updatedCategory = await Category.update(
-      {
-        category_name: req.body.category_name,
-      },
-      {
-        where: { id: req.params.id }
-      },
-    )
+    const updatedCategory = await Category.update(req.body,{ 
+      where: { id: req.params.id } 
+    });
     //if no matching model was found, send message
     if (!updatedCategory[0]) {
       res.status(404).json({ message: "No category found with this id!" });
