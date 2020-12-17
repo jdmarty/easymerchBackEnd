@@ -16,6 +16,9 @@ const categoryData = [
   {
     category_name: 'Shoes',
   },
+  {
+    category_name: 'Sports',
+  }
 ];
 
 const seedCategories = () => Category.bulkCreate(categoryData);
