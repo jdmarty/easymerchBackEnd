@@ -27,9 +27,6 @@ const tagData = [
   },
   {
     tag_name: 'equipment'
-  },
-  {
-    tag_name: 'basketball'
   }
 ];
 

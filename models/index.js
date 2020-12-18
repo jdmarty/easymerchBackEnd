@@ -16,7 +16,7 @@ Category.hasMany(Product, {
 
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
-  //pass through the ProductTag table to and match the two reference categories
+  //pass through the ProductTag table to match the two reference categories
   //product_id and tag_id are in ProductTag and reference both Product and Tag
   through: {
     model: ProductTag,

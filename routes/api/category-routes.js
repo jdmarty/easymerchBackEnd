@@ -37,7 +37,6 @@ router.post('/', async (req, res) => {
   try {
     //create a new category from the provided body
     const newCategory = await Category.create(req.body);
-    console.log(`New category ${req.body.category_name} created`)
     res.status(201).json(newCategory);
   } catch (err) {
     res.status(500).json(err);
@@ -52,10 +51,18 @@ router.put('/:id', async (req, res) => {
     });
     //if no matching model was found, send message
     if (!updatedCategory[0]) {
-      res.status(404).json({ message: "No category found with this id!" });
+      res.status(404).json({ message: "No category update performed" });
       return
     }
-    res.status(200).json(updatedCategory);
+    //if an update was performed, send an object describing the changes 
+    res.status(200).json(
+      { 
+        message: "Category updated",
+        updatedCategoryId: req.params.id,
+        newCategoryName: req.body.category_name, 
+        rowsUpdated: updatedCategory[0]
+      }
+    );
   } catch (err) {
     res.status(500).json(err);
   }
@@ -74,7 +81,14 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: "No category found with this id!" });
       return
     }
-    res.status(200).json(deletedCategory);
+    //if a category was destroyed, send an object describing the changes 
+    res.status(200).json(
+      { 
+        message: "Category deleted",
+        deletedCategoryId: req.params.id,
+        deletedRows: deletedCategory
+      }
+    );
   } catch (err) {
     res.status(500).json(err);
   }
