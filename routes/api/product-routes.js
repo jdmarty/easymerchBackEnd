@@ -27,7 +27,8 @@ router.get('/:id', async (req, res) => {
     //find one product by the associated id
     const productData = await Product.findByPk(req.params.id, {
       include: [
-        { model: Category }, 
+        { model: Category },
+        //join the product model with the tags object created by association in model index 
         { model: Tag, through: ProductTag, as: 'tags' }
       ]
     });
