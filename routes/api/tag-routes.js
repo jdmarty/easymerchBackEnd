@@ -39,7 +39,6 @@ router.post('/', async (req, res) => {
   // create a new tag
   try {
     const newTag = await Tag.create(req.body);
-    console.log(`New category ${req.body.tag_name} created`);
     res.status(201).json(newTag);
   } catch (err) {
     res.status(500).json(err);
@@ -54,10 +53,12 @@ router.put('/:id', async (req, res) => {
     });
     //if no matching model was found, send message
     if (!updatedTag[0]) {
-      res.status(404).json({ message: "No category found with this id!" });
+      res.status(404).json({ message: "No tag update performed" });
       return;
     }
-    res.status(200).json({ message: `Updated tag ID ${req.params.id}`, updatedTag });
+    res.status(200).json({
+      updatedTags: updatedTag[0]
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -73,10 +74,12 @@ router.delete('/:id', async (req, res) => {
     });
     //if no matching model was found, send message
     if (!deletedTag) {
-      res.status(404).json({ message: "No category found with this id!" });
+      res.status(404).json({ message: "No tag found with this id!" });
       return
     }
-    res.status(200).json({ message: `Deleted tag ID ${req.params.id}`, deletedTag });
+    res.status(200).json({
+      deletedTags: deletedTag
+    });
   } catch (err) {
     res.status(500).json(err);
   }

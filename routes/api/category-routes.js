@@ -55,14 +55,9 @@ router.put('/:id', async (req, res) => {
       return
     }
     //if an update was performed, send an object describing the changes 
-    res.status(200).json(
-      { 
-        message: "Category updated",
-        updatedCategoryId: req.params.id,
-        newCategoryName: req.body.category_name, 
-        rowsUpdated: updatedCategory[0]
-      }
-    );
+    res.status(200).json({ 
+      categoriesUpdated: updatedCategory[0]
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -82,13 +77,9 @@ router.delete('/:id', async (req, res) => {
       return
     }
     //if a category was destroyed, send an object describing the changes 
-    res.status(200).json(
-      { 
-        message: "Category deleted",
-        deletedCategoryId: req.params.id,
-        deletedRows: deletedCategory
-      }
-    );
+    res.status(200).json({ 
+      deletedCategories: deletedCategory
+    });
   } catch (err) {
     res.status(500).json(err);
   }
