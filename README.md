@@ -14,6 +14,7 @@
 
 This application functions as back-end for an e-commerce site that establishes a database relation map to construct an API that can be used to create, read, updated, and delete products, categories and tags
 
+![Insomnia Core API setup](https://github.com/jdmarty/easymerchBackEnd/blob/main/Assets/finishedsnip.PNG)
 
 ## Links
 
