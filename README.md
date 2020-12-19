@@ -22,11 +22,11 @@ This application functions as back-end for an e-commerce site that establishes a
 
 ## Installation
 1. Clone the github repo from the following link [https://github.com/jdmarty/ecomBackend](https://github.com/jdmarty/ecomBackend).
-2. Update the .env.EXAMPLE file with the username for the desired MySQL database
+2. Update the .env.EXAMPLE file with the username (DB_USER) and password (DB_PW) for the desired MySQL database
 3. Remove the .EXAMPLE extension from the .env file.
 4. Run the code in schema.sql in an SQL workbench to create the database that will be connected based on the information in the .env file.
 5. Open a node terminal in the root directory.
-6. Run "npm install" in the termainal
+6. Run "npm install" in the terminal
 7. Run "npm run seed" in the terminal to seed the database with a pre-built data set.
 8. Run "npm start" in the terminal to start the application server
 
