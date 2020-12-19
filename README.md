@@ -18,7 +18,7 @@ This application functions as back-end for an e-commerce site that establishes a
 ## Links
 
 - [Repository](https://github.com/jdmarty/ecomBackend)
-- [Demonstration](https://github.com/jdmarty/ecomBackend)
+- [Demonstration](https://drive.google.com/file/d/1R37j1sJlnjo2LvKdRzw6OLdOh_YWsLXe/view?usp=sharing)
 
 ## Installation
 1. Clone the github repo from the following link [https://github.com/jdmarty/ecomBackend](https://github.com/jdmarty/ecomBackend).
