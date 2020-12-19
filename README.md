@@ -64,7 +64,7 @@ Use an application like Postman or Insomnia Core to make calls to the API once t
     - price: decimal **required**
     - tagIds: Array of tag id integers **required**
     - stock: integer
-- PUT http://localhost:3001/api/products/7 to Update a single product by id
+- PUT http://localhost:3001/api/products/{id} to Update a single product by id
   - request body is an JSON object with the the following key-value pairs
     - tagIds: Array of tag id integers **required**
     - category_id: category id integer
@@ -74,7 +74,7 @@ Use an application like Postman or Insomnia Core to make calls to the API once t
 - DELETE http://localhost:3001/api/tags/{id} to Delete a single product by id
 
 ## License
-This project uses the ISC license
+This application uses the ISC license
 
 ---------------------------------------------------------------------------------
 
