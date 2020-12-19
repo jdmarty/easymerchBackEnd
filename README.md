@@ -1,4 +1,4 @@
-# Ecommerce Backend
+# Easymerch Back End
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Table of Contents
@@ -17,11 +17,11 @@ This application functions as back-end for an e-commerce site that establishes a
 
 ## Links
 
-- [Repository](https://github.com/jdmarty/ecomBackend)
-- [Demonstration](https://drive.google.com/file/d/1R37j1sJlnjo2LvKdRzw6OLdOh_YWsLXe/view?usp=sharing)
+- [Repository](https://github.com/jdmarty/easymerchBackEnd)
+- [Demonstration Video](https://drive.google.com/file/d/1Kmy6ExaT_blDG9yZd1Kd91n0cWaQVxsX/view?usp=sharing)
 
 ## Installation
-1. Clone the github repo from the following link [https://github.com/jdmarty/ecomBackend](https://github.com/jdmarty/ecomBackend).
+1. Clone the github repo from the following link [https://github.com/jdmarty/easymerchBackEnd](https://github.com/jdmarty/easymerchBackEnd).
 2. Update the .env.EXAMPLE file with the username (DB_USER) and password (DB_PW) for the desired MySQL database
 3. Remove the .EXAMPLE extension from the .env file.
 4. Run the code in schema.sql in an SQL workbench to create the database that will be connected based on the information in the .env file.
